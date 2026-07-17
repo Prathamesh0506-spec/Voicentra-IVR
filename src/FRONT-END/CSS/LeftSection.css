@@ -1,0 +1,35 @@
+.phone-container{
+
+    width:100%;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    padding-top:15px;
+}
+
+.iphone-frame{
+
+    width:350px;
+
+    height:92vh;
+
+    max-height:780px;
+
+    background:#ffffff;
+
+    border:8px solid #1f1f1f;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+}

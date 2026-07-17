@@ -1,0 +1,11 @@
+.active-session{
+    width: 100%;
+    min-height: 200px;
+
+    border: 1px solid white;
+    border-radius: 20px;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+}

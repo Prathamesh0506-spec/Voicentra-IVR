@@ -1,0 +1,76 @@
+.controls-container{
+
+    width:100%;
+
+    margin-top:25px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:35px;
+}
+
+.call-button{
+
+    width:78px;
+
+    height:78px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#34C759;
+
+    color:#ffffff;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.call-button:hover{
+
+    transform:scale(1.05);
+}
+
+.call-button:active{
+
+    transform:scale(.95);
+}
+
+.delete-button{
+
+    width:46px;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#E5E5EA;
+
+    color:#000;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.delete-button:hover{
+
+    background:#D1D1D6;
+}
+
+.delete-button:active{
+
+    transform:scale(.95);
+}
