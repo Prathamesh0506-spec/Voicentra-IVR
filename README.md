@@ -302,11 +302,176 @@ src
 
 ---
 
-# 👨‍💻 Author
+# ⚙️ Installation Guide
 
-**Prathamesh**  
-B.Tech Information Technology Student
+Follow the steps below to set up and run the project on your local machine.
 
 ---
 
-## ⭐ If you found this project helpful, consider giving it a star!
+## 📋 Prerequisites
+
+Make sure the following software is installed:
+
+- **Node.js** (v18 or later recommended)
+- **npm** (comes with Node.js)
+- **Git**
+- **VS Code** (Recommended)
+
+Verify the installation:
+
+```bash
+node -v
+npm -v
+git --version
+```
+
+---
+
+# 📥 Clone the Repository
+
+```bash
+git clone https://github.com/Prathamesh0506-spec/Voicentra-IVR.git
+```
+
+Navigate to the project folder:
+
+```bash
+cd Voicentra-IVR
+```
+
+---
+
+# 📦 Install Dependencies
+
+Install all required packages:
+
+```bash
+npm install
+```
+
+---
+
+# ▶️ Run the Frontend
+
+Start the React development server:
+
+```bash
+npm start
+```
+
+The application will be available at:
+
+```text
+http://localhost:3000
+```
+
+---
+
+# ⚙️ Run the Backend
+
+Open a **new terminal** inside the project directory.
+
+Navigate to the backend folder:
+
+```bash
+cd src/BACK-END
+```
+
+Install backend dependencies:
+
+```bash
+npm install
+```
+
+Start the Express server:
+
+```bash
+node server.js
+```
+
+The backend server will start on:
+
+```text
+http://localhost:5000
+```
+
+> **Note:** Ensure the backend is running before interacting with the IVR interface.
+
+---
+
+# 🚀 Running Both Servers
+
+You should have **two terminals** open:
+
+### Terminal 1
+
+```bash
+npm start
+```
+
+Runs the React Frontend.
+
+---
+
+### Terminal 2
+
+```bash
+cd src/BACK-END
+node server.js
+```
+
+Runs the Express Backend.
+
+---
+
+# 🌐 API Base URL
+
+The frontend communicates with:
+
+```text
+http://localhost:5000
+```
+
+If you change the backend port, update the API URL inside:
+
+```text
+src/FRONT-END/services/ivrApi.js
+```
+
+---
+
+# 📌 Project is Ready
+
+Open your browser and visit:
+
+```text
+http://localhost:3000
+```
+
+You can now:
+
+- 📞 Start a Call
+- 🔢 Send DTMF Inputs
+- 📋 View Active Sessions
+- 📚 View Call History
+
+---
+
+# 🛑 Stopping the Application
+
+Press:
+
+```text
+Ctrl + C
+```
+
+in both terminals to stop the frontend and backend servers.
+
+ Author
+**Prathamesh Ohol**  
+B.Tech Information Technology 
+
+⭐ If you found this project helpful, If Wish To Connect !
+📧 **Email:** prathameshohol12@gmail.com
+💼 **LinkedIn:** www.linkedin.com/in/prathamesh-ohol-1a49b7320
+
