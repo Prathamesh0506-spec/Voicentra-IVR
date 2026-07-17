@@ -1,70 +1,312 @@
-# Getting Started with Create React App
+# 🚀 Voicentra – AI-Powered IVR Simulator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> A full-stack IVR simulation platform built using **React, Express.js, Node.js, and Bootstrap**, designed to demonstrate intelligent call routing, DTMF processing, and real-time session management.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+# ✨ Features
 
-### `npm start`
+- 📞 Interactive Dial Pad
+- 🤖 AI-inspired IVR Menu Simulation
+- 🎯 Real-Time Call Session Tracking
+- 📋 Call History Management
+- 🔢 DTMF Input Processing
+- ⚡ REST API Based Communication
+- 🏗 Modular MVC Backend Architecture
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# 🛠 Tech Stack
 
-### `npm test`
+### Frontend
+- React.js
+- Bootstrap
+- Axios
+- CSS3
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Backend
+- Node.js
+- Express.js
 
-### `npm run build`
+### Development Tools
+- Git
+- GitHub
+- VS Code
+- Postman
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# 🏗 System Architecture
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```text
+                USER
+                  │
+                  ▼
+        React Frontend (UI)
+                  │
+                  ▼
+           API Service Layer
+                  │
+         HTTP Requests (REST)
+                  │
+                  ▼
+      Express Backend Server
+                  │
+        ┌─────────┴─────────┐
+        ▼                   ▼
+  Route Layer         Controller Layer
+        │                   │
+        └─────────┬─────────┘
+                  ▼
+          Service Layer (Logic)
+                  │
+                  ▼
+         In-Memory Call Storage
+                  │
+                  ▼
+          JSON Response → React
+```
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# 🔄 Complete Application Workflow
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📞 Step 1 — User Starts a Call
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```text
+User
+   │
+   ▼
+Enters Phone Number
+   │
+Clicks Start Call
+   │
+   ▼
+React Frontend
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### What Happens?
 
-## Learn More
+- User enters a phone number.
+- React sends a request to the backend.
+- Backend creates a brand-new call session.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🌐 Step 2 — API Communication
 
-### Code Splitting
+```text
+React
+   │
+POST /start-call
+   │
+   ▼
+ivrApi.js
+   │
+HTTP Request
+   │
+   ▼
+Express Server
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The **API Layer** acts as a bridge between the UI and the backend.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## ⚙ Step 3 — Request Processing
 
-### Making a Progressive Web App
+```text
+Express Route
+      │
+      ▼
+ivrController.js
+      │
+      ▼
+ivrService.js
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Responsibilities
 
-### Advanced Configuration
+**Route**
+- Receives incoming request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+↓
 
-### Deployment
+**Controller**
+- Validates request
+- Extracts parameters
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+↓
 
-### `npm run build` fails to minify
+**Service**
+- Executes business logic
+- Creates or updates IVR session
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## 🧠 Step 4 — IVR Decision Engine
+
+```text
+ivrService.js
+      │
+      ▼
+menuData.js
+      │
+      ▼
+Determine Next Menu
+```
+
+The service checks the user's keypad input and decides:
+
+- Which menu should appear next
+- Which prompt should be returned
+- Whether the call should continue
+- Whether the session should end
+
+---
+
+## 🔢 Step 5 — DTMF Processing
+
+```text
+User Presses Key
+        │
+        ▼
+React
+        │
+POST /dtmf
+        │
+        ▼
+Backend
+        │
+        ▼
+Service Layer
+        │
+        ▼
+Update Session
+```
+
+Every keypad press updates the current IVR session.
+
+---
+
+## 📊 Step 6 — UI Update
+
+```text
+Backend
+      │
+JSON Response
+      │
+      ▼
+React
+      │
+      ▼
+Active Session
+Call History
+Prompt Display
+```
+
+The frontend instantly updates:
+
+- Active Call
+- Current Prompt
+- Menu State
+- Call History
+
+---
+
+# 🎯 Complete Request Journey
+
+```text
+                 USER
+                   │
+                   ▼
+        React Frontend (Dial Pad)
+                   │
+        Start Call / Press Key
+                   │
+                   ▼
+         ivrApi.js (API Layer)
+                   │
+          HTTP Request
+                   │
+                   ▼
+      Express Routes (ivrRoutes.js)
+                   │
+                   ▼
+   Controller (ivrController.js)
+                   │
+                   ▼
+ Service Layer (ivrService.js)
+       │          │          │
+       ▼          ▼          ▼
+Create Session  Process DTMF End Call
+       │          │          │
+       └──────────┼──────────┘
+                  ▼
+          menuData.js
+          (IVR Decision Tree)
+                  │
+                  ▼
+        JSON Response
+                  │
+                  ▼
+ Active Session / Call History
+```
+
+---
+
+# 📂 Project Structure
+
+```text
+src
+│
+├── FRONT-END
+│   ├── LeftSection
+│   ├── RightSection
+│   ├── services
+│   └── DisplayPage
+│
+└── BACK-END
+    ├── routes
+    ├── controllers
+    ├── services
+    ├── utils
+    └── config
+```
+
+> Instead of listing every file, this structure highlights the major architectural layers.
+
+---
+
+# 🌐 API Endpoints
+
+| Method | Endpoint | Description |
+|:------:|-----------|-------------|
+| **POST** | `/start-call` | Creates a new IVR session |
+| **POST** | `/dtmf` | Processes keypad input |
+| **POST** | `/end-call` | Ends the active call |
+| **GET** | `/active-calls` | Returns all active sessions |
+| **GET** | `/call-history` | Returns completed call history |
+
+---
+
+# 🔮 Future Enhancements
+
+- 💾 MongoDB Integration
+- ☁ Cloud Deployment
+- ☎ Twilio Voice Calling
+- 🎤 Speech-to-Text
+- 🔐 JWT Authentication
+- 📈 Call Analytics Dashboard
+- 🤖 AI-Based Voice Responses
+
+---
+
+# 👨‍💻 Author
+
+**Prathamesh**  
+B.Tech Information Technology Student
+
+---
+
+## ⭐ If you found this project helpful, consider giving it a star!
